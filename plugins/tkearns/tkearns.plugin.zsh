@@ -1,9 +1,9 @@
 alias be='bundle exec'
 alias bower='noglob bower'
 alias c='clear'
+alias cr='clear && rspec'
 alias lsl='ls -al'
 alias migrate='bundle exec rake db:migrate db:test:prepare'
-alias rss='rspec spec/'
 alias zmigrate='zeus rake db:migrate db:test:prepare'
 alias zrss='zeus rspec spec/'
 
