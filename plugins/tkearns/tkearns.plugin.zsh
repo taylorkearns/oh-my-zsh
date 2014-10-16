@@ -19,8 +19,20 @@ function cleanlocal() {
   git branch;
 }
 
-function removeextras() {
-  rm spec/controllers/$1_controller_spec.rb;
-  rm app/helpers/$1_helper.rb;
-  rm spec/helpers/$1_helper_spec.rb;
+function mergeDevelop() {
+  git checkout develop;
+  git pull --rebase;
+  git checkout feature/daily_update;
+  git pull --rebase;
+  git merge develop;
+}
+
+function mergeFirstIntoSecond() {
+  git checkout $1;
+  git branch --set-upstream-to=origin/$1 $1
+  git pull --rebase;
+  git checkout $2;
+  git branch --set-upstream-to=origin/$2 $2
+  git pull --rebase;
+  git merge $1;
 }
