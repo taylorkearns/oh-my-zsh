@@ -22,14 +22,6 @@ function cleanlocal() {
   git branch;
 }
 
-function mergeDevelop() {
-  git checkout develop;
-  git pull --rebase;
-  git checkout feature/daily_update;
-  git pull --rebase;
-  git merge develop;
-}
-
 function mergeFirstIntoSecond() {
   git checkout $1;
   git branch --set-upstream-to=origin/$1 $1
@@ -38,4 +30,10 @@ function mergeFirstIntoSecond() {
   git branch --set-upstream-to=origin/$2 $2
   git pull --rebase;
   git merge $1;
+}
+
+function track() {
+  branch_name=$(git branch | grep "*");
+  branch_name="${branch_name/\* /}";
+  git branch --set-upstream-to=origin/$branch_name $branch_name;
 }
