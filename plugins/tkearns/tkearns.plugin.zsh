@@ -9,6 +9,7 @@ alias lsl="ls -al"
 alias migrate="bundle exec rake db:migrate db:test:prepare"
 alias zmigrate="zeus rake db:migrate db:test:prepare"
 alias zrss="zeus rspec spec/"
+alias spec="bin/rspec $1 --no-profile"
 
 function port() { lsof -i tcp:"$1"; }
 
