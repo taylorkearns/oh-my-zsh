@@ -1,15 +1,11 @@
 alias be="bundle exec"
-alias bower="noglob bower"
 alias c="clear"
-alias cr="clear && rspec"
 alias edit="open -a MacVim.app $1"
 alias fucking="git"
 alias gitlog="git log --pretty=oneline"
 alias lsl="ls -al"
 alias migrate="bundle exec rake db:migrate db:test:prepare"
-alias zmigrate="zeus rake db:migrate db:test:prepare"
-alias zrss="zeus rspec spec/"
-alias spec="bin/rspec $1 --no-profile"
+alias bspec="bin/rspec $1 --no-profile"
 
 function port() { lsof -i tcp:"$1"; }
 
