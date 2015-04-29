@@ -1,11 +1,11 @@
 alias be="bundle exec"
+alias bspec="foreman run bin/rspec $1 --no-profile"
 alias c="clear"
 alias edit="open -a MacVim.app $1"
 alias fucking="git"
 alias gitlog="git log --pretty=oneline"
 alias lsl="ls -al"
 alias migrate="bundle exec rake db:migrate db:test:prepare"
-alias bspec="bin/rspec $1 --no-profile"
 
 function port() { lsof -i tcp:"$1"; }
 
