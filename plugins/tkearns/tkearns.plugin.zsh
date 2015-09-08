@@ -34,3 +34,13 @@ function track() {
   branch_name="${branch_name/\* /}";
   git branch --set-upstream-to=origin/$branch_name $branch_name;
 }
+
+# protractor integration specs for Plan
+function protract() {
+  if [ $# -eq 1 ]
+  then
+    node_modules/protractor/bin/protractor protractor/conf.js --specs=protractor/features/$1.feature
+  else
+    node_modules/protractor/bin/protractor protractor/conf.js
+  fi
+}
